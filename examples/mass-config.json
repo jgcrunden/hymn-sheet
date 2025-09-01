@@ -1,0 +1,41 @@
+{
+    "date": "2025-08-31",
+    "yearAndPsalterRef": true,
+    "euchPrayerOption": true,
+    "entranceAntiphon": true,
+    "communionAntiphon": true,
+    "hymns": [
+        {
+            "position": "PROCESSIONAL",
+            "friendlyName": "Opening Hymn",
+            "hymnBook": "LAU",
+            "hymnNum": 123,
+            "verses": 4,
+            "columns": true
+        },
+        {
+            "position": "OFFERTORY",
+            "friendlyName": "Presentation of gifts",
+            "hymnBook": "LAU",
+            "hymnNum": 234,
+            "verses": 4,
+            "columns": true
+        },
+        {
+            "position": "COMMUNION",
+            "friendlyName": "Communion Hymn",
+            "hymnBook": "LAU",
+            "hymnNum": 456,
+            "verses": 4,
+            "columns": true
+        },
+        {
+            "position": "RECESSIONAL",
+            "friendlyName": "Concluding Hymn",
+            "hymnBook": "LAU",
+            "hymnNum": 567,
+            "verses": 4,
+            "columns": true
+        }
+    ]
+}
