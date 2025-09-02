@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/jgcrunden/hymn-sheet/model"
+	"github.com/jgcrunden/hymn-sheet/utils"
 )
 
 const preamble = `\documentclass[12pt]{article}
@@ -16,6 +17,7 @@ const preamble = `\documentclass[12pt]{article}
 \usepackage[none]{hyphenat} % prevent splitting words over two lines
 \usepackage{helvet} % font
 \usepackage{fontspec}
+\usepackage[super]{nth}
 \setmainfont{Arial}
 \pagestyle{empty} % suppress page numbers
 \setlength{\vleftskip}{12pt} % decrease gap between verse numbers and verses
@@ -28,17 +30,24 @@ func wrapHymn(friendlyName string, lyrics string) string {
 	return fmt.Sprintf("\\begin{center}\n\\subsection*{%s}\n\\end{center}\n\\begin{multicols}{2}\n\\setcounter{count}{0}\n%s\n\\end{multicols}\n\n", friendlyName, lyrics)
 }
 
-func GenerateLatex(config model.Config, propers model.Propers, cycles model.Cycles) ([]byte, error) {
+func GenerateLatex(config model.Config, propers model.Propers, cycles model.Cycles) (string, error) {
 
 	var byteBuffer bytes.Buffer
 	// preamble
 	if _, err := byteBuffer.WriteString(preamble); err != nil {
-		return nil, err
+		return "", err
 	}
 
+	prettifiedProperDay, err := utils.PrettifyProperDay(propers.ProperDay)
+	if err != nil {
+		return "", err
+	}
+
+	prettifiedDate := fmt.Sprintf("\\nth{%d} %s", config.Date.Day(), config.Date.Month().String())
+
 	// Title and info about day/week/year
-	if _, err := byteBuffer.WriteString(fmt.Sprintf("\\begin{document}\n\\begin{center}\n\\section*{%s\\\\%s}\n\n\\begin{tabular}{ |l|l| }\n\\hline\n\\textbf{Readings} & Sunday Mass Cycle %s : Weekday Mass Year %d : Psalter %d\\\\\n\\textbf{Eucharistic Prayer} & %d (or at priest’s choice)\\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n", propers.ProperDay, config.Date, cycles.LectionaryYearSunday, cycles.LectionaryYearWeekday, cycles.PsalterWeek, config.EuchPrayerOption)); err != nil {
-		return nil, err
+	if _, err := byteBuffer.WriteString(fmt.Sprintf("\\begin{document}\n\\begin{center}\n\\section*{%s\\\\%s}\n\n\\begin{tabular}{ |l|l| }\n\\hline\n\\textbf{Readings} & Sunday Mass Cycle %s : Weekday Mass Year %d : Psalter %d\\\\\n\\textbf{Eucharistic Prayer} & %d (or at priest’s choice)\\\\\n\\hline\n\\end{tabular}\n\\end{center}\n\n", prettifiedProperDay, prettifiedDate, cycles.LectionaryYearSunday, cycles.LectionaryYearWeekday, cycles.PsalterWeek, config.EuchPrayerOption)); err != nil {
+		return "", err
 	}
 
 	// opening hymn
@@ -78,6 +87,7 @@ func GenerateLatex(config model.Config, propers model.Propers, cycles model.Cycl
 	}
 
 	byteBuffer.WriteString("\\end{document}")
-	os.WriteFile("hymn-sheet.tex", byteBuffer.Bytes(), 0644)
-	return nil, nil
+	latexFileName := fmt.Sprintf("%s.tex", config.Date.String())
+	os.WriteFile(latexFileName, byteBuffer.Bytes(), 0644)
+	return latexFileName, nil
 }

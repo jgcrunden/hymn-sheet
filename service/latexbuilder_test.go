@@ -158,7 +158,7 @@ Let us resolve like steel be strong\\*
 	}
 
 	propers := model.Propers{
-		ProperDay:         "22nd Sunday of Ordinary Time",
+		ProperDay:         "c-ordinary-22",
 		EntranceAntiphon:  "This is the entrance antiphon",
 		FirstReading:      "This is the first reading",
 		ResponsorialPsalm: "This is the responsorial psalm",

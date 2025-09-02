@@ -1,9 +1,6 @@
 {
     "date": "2025-08-31",
-    "yearAndPsalterRef": true,
-    "euchPrayerOption": true,
-    "entranceAntiphon": true,
-    "communionAntiphon": true,
+    "euchPrayerOption": 1,
     "hymns": [
         {
             "position": "PROCESSIONAL",
@@ -17,7 +14,7 @@
             "position": "OFFERTORY",
             "friendlyName": "Presentation of gifts",
             "hymnBook": "LAU",
-            "hymnNum": 234,
+            "hymnNum": 123,
             "verses": 4,
             "columns": true
         },
@@ -25,7 +22,7 @@
             "position": "COMMUNION",
             "friendlyName": "Communion Hymn",
             "hymnBook": "LAU",
-            "hymnNum": 456,
+            "hymnNum": 123,
             "verses": 4,
             "columns": true
         },
@@ -33,7 +30,7 @@
             "position": "RECESSIONAL",
             "friendlyName": "Concluding Hymn",
             "hymnBook": "LAU",
-            "hymnNum": 567,
+            "hymnNum": 123,
             "verses": 4,
             "columns": true
         }

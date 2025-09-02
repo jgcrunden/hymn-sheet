@@ -62,7 +62,6 @@ func (h HymnBuilder) TagHymnVerses(input []model.Hymn) ([]model.Hymn, error) {
 				hymnsTmp = strings.ReplaceAll(hymnsTmp, "[", "")
 				hymnsTmp = strings.ReplaceAll(hymnsTmp, "]", "")
 			}
-			fmt.Println(hymnsTmp)
 			hymnsTmp = strings.ReplaceAll(hymnsTmp, "\n", "\\\\*\n")
 			hymnsTmp = fmt.Sprintf("%s\\\\*", hymnsTmp)
 			if isChorus {

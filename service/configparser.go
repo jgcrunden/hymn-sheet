@@ -26,6 +26,7 @@ func (c *ConfigParser) ReadConfigFile(filename string) error {
 	if err != nil {
 		return err
 	}
+	c.Config = conf
 	return nil
 }
 
