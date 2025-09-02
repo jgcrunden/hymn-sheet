@@ -1,5 +1,22 @@
 {
     "2025-08-31": { "_": "c-ordinary-22" },
-    "2025-09-07": { "_": "c-ordinary-23" }
+    "2025-09-07": { "_": "c-ordinary-23" },
+    "2025-09-14": { "_": "the-exltation-of-the-holy-cross", "suppressed": "c-ordinary-24" },
+    "2025-09-21": { "_": "c-ordinary-25"},
+    "2025-09-28": { "_": "c-ordinary-26"},
+    "2025-10-05": { "_": "c-ordinary-27"},
+    "2025-10-12": { "_": "c-ordinary-28"},
+    "2025-10-19": { "_": "c-ordinary-29"},
+    "2025-10-26": { "_": "c-ordinary-30"},
+    "2025-11-02": { "_": "all-saints", "suppressed": "c-ordinary-31" },
+    "2025-11-09": { "_": "dedication-of-the-lateran-basilica", "suppressed": "c-ordinary-32" },
+    "2025-11-16": { "_": "c-ordinary-33" },
+    "2025-11-23": { "_": "christ-the-king", "suppressed": "c-ordinary-33" },
+    "2025-11-30": { "_": "a-advent-1" },
+    "2025-12-07": { "_": "a-advent-2" },
+    "2025-12-14": { "_": "a-advent-3" },
+    "2025-12-21": { "_": "a-advent-4" },
+    "2025-12-25": { "_": "a-christmas-day" },
+    "2025-12-28": { "_": "a-the-holy-family" }
 
 }

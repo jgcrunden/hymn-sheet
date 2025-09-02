@@ -11,7 +11,7 @@ import (
 
 const preamble = `\documentclass[12pt]{article}
 \usepackage[parfill]{parskip} % for supressing first line indent
-\usepackage[margin={1.5cm, 1cm}]{geometry}
+\usepackage[margin={1cm, 1cm}]{geometry}
 \usepackage{multicol} % creating columns
 \usepackage{verse} % rendering verses
 \usepackage[none]{hyphenat} % prevent splitting words over two lines
@@ -31,7 +31,6 @@ func wrapHymn(friendlyName string, lyrics string) string {
 }
 
 func GenerateLatex(config model.Config, propers model.Propers, cycles model.Cycles) (string, error) {
-
 	var byteBuffer bytes.Buffer
 	// preamble
 	if _, err := byteBuffer.WriteString(preamble); err != nil {
@@ -51,17 +50,14 @@ func GenerateLatex(config model.Config, propers model.Propers, cycles model.Cycl
 	}
 
 	// opening hymn
-	var openingHymn *model.Hymn
 	for _, v := range config.Hymns {
 		if v.Position == model.PROCESSIONAL {
 			byteBuffer.WriteString(wrapHymn(v.FriendlyName, v.Lyrics))
 		}
 	}
-	if openingHymn != nil {
-	}
 
 	// table with liturgy of the word details
-	byteBuffer.WriteString(fmt.Sprintf("\\begin{center}\n\\subsection*{Liturgy of the Word}\n\\begin{tabular}{ |p{0.25\\textwidth}|p{0.5\\textwidth}| }\n\\hline\n\\textbf{Entrance Antiphon} & %s\\\\\n\\hline\n\\textbf{First Reading} & %s\\\\\n\\hline\n\\textbf{Psalm Response} & %s\\\\\n\\hline\n\\textbf{Second Reading} & %s\\\\\n\\hline\n\\textbf{Gospel Acclamation} & %s\\\\\n\\hline\n\\textbf{Gospel} & %s\\\\\n\\hline\n\\textbf{Communion\\newline Antiphon} & %s\\\\\n\\hline\n\\end{tabular}\\end{center}", propers.EntranceAntiphon, propers.FirstReading, propers.ResponsorialPsalm, propers.SecondReading, propers.GospelAcclamation, propers.Gospel, propers.CommunionAntiphon))
+	byteBuffer.WriteString(fmt.Sprintf("\\begin{center}\n\\subsection*{Liturgy of the Word}\n\\begin{tabular}{ |p{0.25\\textwidth}|p{0.5\\textwidth}| }\n\\hline\\textbf{First Reading} & %s\\\\\n\\hline\n\\textbf{Psalm Response} & %s\\\\\n\\hline\n\\textbf{Second Reading} & %s\\\\\n\\hline\n\\textbf{Gospel Acclamation} & %s\\\\\n\\hline\n\\textbf{Gospel} & %s\\\\\n\\hline\n\\textbf{Communion\\newline Antiphon} & %s\\\\\n\\hline\n\\end{tabular}\\end{center}", propers.FirstReading, propers.ResponsorialPsalm, propers.SecondReading, propers.GospelAcclamation, propers.Gospel, propers.CommunionAntiphon))
 
 	// offertory hymn
 	for _, v := range config.Hymns {

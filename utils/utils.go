@@ -69,7 +69,10 @@ func PrettifyProperDay(input string) (string, error) {
 		}
 		output = fmt.Sprintf(*template, numToOrdinal[num])
 	} else {
-		splitStr := strings.Split(input, "-")[1:]
+		splitStr := strings.Split(input, "-")
+		if splitStr[0] == "a" || splitStr[0] == "b" || splitStr[0] == "c" {
+			splitStr = splitStr[1:]
+		}
 		for i := range splitStr {
 			if i == 0 || !slices.Contains(functionWords, splitStr[i]) {
 				splitStr[i] = strings.ToUpper(splitStr[i][:1]) + splitStr[i][1:]
