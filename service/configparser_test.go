@@ -8,7 +8,7 @@ import (
 const exampleConfigValid = `{
     "date": "2025-08-31",
     "yearAndPsalterRef": true,
-    "euchPrayerOption": true,
+    "euchPrayerOption": 2,
     "entranceAntiphon": true,
     "communionAntiphon": true,
     "hymns": [

@@ -59,6 +59,7 @@ func (p *ProperBuilder) GetPropers(filename string) (model.Propers, error) {
 	if err != nil {
 		return model.Propers{}, err
 	}
+	propers.ProperDay = p.properDay
 	return propers, nil
 }
 

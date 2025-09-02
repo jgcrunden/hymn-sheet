@@ -32,7 +32,7 @@ func TestFetchHymnsHymDoesNotExist(t *testing.T) {
 const hymn = `Diverse in culture, nation, race,
 we come together by your grace.
 God let us be a meeting ground
-where hope and healing love are found. 
+where hope and healing love are found.
 
 [This is a chorus
 This is a chorus
@@ -40,7 +40,7 @@ This is a chorus
 This is a chorus]
 
 God, let us be a bridge of care
-connecting people everywhere. 
+connecting people everywhere.
 Help us confront all fear and hate
 and lust for power that separate.
 
@@ -77,7 +77,7 @@ func TestReduceHymn(t *testing.T) {
 	expectedResult := `Diverse in culture, nation, race,
 we come together by your grace.
 God let us be a meeting ground
-where hope and healing love are found. 
+where hope and healing love are found.
 
 [This is a chorus
 This is a chorus
@@ -85,7 +85,7 @@ This is a chorus
 This is a chorus]
 
 God, let us be a bridge of care
-connecting people everywhere. 
+connecting people everywhere.
 Help us confront all fear and hate
 and lust for power that separate.
 
@@ -97,7 +97,75 @@ Let us resolve like steel be strong`
 	if err != nil {
 		t.Errorf("Expected no error, got %s", err.Error())
 	}
-	if res[0] != expectedResult {
-		t.Errorf("Expected %s, got %s", expectedResult, res[0])
+	if res[0].Lyrics != expectedResult {
+		t.Errorf("Expected %s, got %s", expectedResult, res[0].Lyrics)
+	}
+}
+
+func TestTransformVersesSuccess(t *testing.T) {
+	inputHymns := []model.Hymn{
+		{
+			Position:     model.PROCESSIONAL,
+			FriendlyName: "Opening Hymn",
+			HymnBook:     model.LAU,
+			HymnNum:      123,
+			Verses:       3,
+			Columns:      true,
+			Lyrics: `Diverse in culture, nation, race,
+we come together by your grace.
+God let us be a meeting ground
+where hope and healing love are found.
+
+[This is a chorus
+This is a chorus
+This is a chorus
+This is a chorus]
+
+God, let us be a bridge of care
+connecting people everywhere.
+Help us confront all fear and hate
+and lust for power that separate.
+
+When chasms widen, storms arise,
+O Holy Spirit, make us wise.
+Let us resolve like steel be strong`,
+		},
+	}
+	m := mockFileReaderReturnHymn{}
+	config := model.Config{}
+	expectedOuput := `\setcounter{count}{0}
+\begin{verse}
+\flagverse{\printcount.} Diverse in culture, nation, race,\\*
+we come together by your grace.\\*
+God let us be a meeting ground\\*
+where hope and healing love are found.\\*
+\end{verse}
+
+\begin{verse}
+\textit{This is a chorus\\*
+This is a chorus\\*
+This is a chorus\\*
+This is a chorus\\*}
+\end{verse}
+
+\begin{verse}
+\flagverse{\printcount.} God, let us be a bridge of care\\*
+connecting people everywhere.\\*
+Help us confront all fear and hate\\*
+and lust for power that separate.\\*
+\end{verse}
+
+\begin{verse}
+\flagverse{\printcount.} When chasms widen, storms arise,\\*
+O Holy Spirit, make us wise.\\*
+Let us resolve like steel be strong\\*
+\end{verse}`
+	h := NewHymnBuilder(m, config)
+	output, err := h.TagHymnVerses(inputHymns)
+	if err != nil {
+		t.Errorf("Expected no error, got %s", err.Error())
+	}
+	if output[0].Lyrics != expectedOuput {
+		t.Errorf("Output:\n%s", output[0].Lyrics)
 	}
 }

@@ -11,6 +11,7 @@ type Calendar struct {
 }
 
 type Propers struct {
+	ProperDay         string `json:"-"`
 	EntranceAntiphon  string `json:"entranceAntiphon"`
 	FirstReading      string `json:"firstReading"`
 	ResponsorialPsalm string `json:"responsorialPsalm"`

@@ -9,7 +9,7 @@ import (
 type Config struct {
 	Date              Date   `json:"date"`
 	YearAndPsalterRef bool   `json:"yearAndPsalterRef"`
-	EuchPrayerOption  bool   `json:"euchPrayerOption"`
+	EuchPrayerOption  uint   `json:"euchPrayerOption"`
 	EntranceAntiphon  bool   `json:"entranceAntiphon"`
 	CommunionAntiphon bool   `json:"communionAntiphon"`
 	Hymns             []Hymn `json:"hymns"`
@@ -53,6 +53,7 @@ type Hymn struct {
 	HymnNum      uint     `json:"hymnNum"`
 	Verses       uint     `json:"verses"`
 	Columns      bool     `json:"columns"`
+	Lyrics       string
 }
 
 type Position int
