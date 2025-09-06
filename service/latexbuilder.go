@@ -27,7 +27,7 @@ const preamble = `\documentclass[12pt]{article}
 `
 
 func wrapHymn(friendlyName string, lyrics string) string {
-	return fmt.Sprintf("\\begin{center}\n\\subsection*{%s}\n\\end{center}\n\\begin{multicols}{2}\n\\setcounter{count}{0}\n%s\n\\end{multicols}\n\n", friendlyName, lyrics)
+	return fmt.Sprintf("\\begin{center}\n\\subsection*{%s}\n\\end{center}\n\\begin{multicols}{2}\n%s\n\\end{multicols}\n\n", friendlyName, lyrics)
 }
 
 func GenerateLatex(config model.Config, propers model.Propers, cycles model.Cycles) (string, error) {

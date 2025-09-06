@@ -5,29 +5,36 @@
         {
             "position": "PROCESSIONAL",
             "friendlyName": "Opening Hymn",
-            "hymnBook": "LAU",
-            "hymnNum": 1,
-            "verses": 4
+            "hymnBook": "LHOAN",
+            "hymnNum": 740,
+            "verses": 5
         },
         {
             "position": "OFFERTORY",
             "friendlyName": "Presentation of gifts",
-            "hymnBook": "LAU",
-            "hymnNum": 2,
+            "hymnBook": "LHOAN",
+            "hymnNum": 122,
             "verses": 4
         },
         {
             "position": "COMMUNION",
-            "friendlyName": "Communion Hymn",
-            "hymnBook": "LAU",
-            "hymnNum": 3,
+            "friendlyName": "Communion Hymn I",
+            "hymnBook": "LHOAN",
+            "hymnNum": 697,
+            "verses": 4
+        },
+        {
+            "position": "COMMUNION",
+            "friendlyName": "Communion Hymn II",
+            "hymnBook": "LHOAN",
+            "hymnNum": 187,
             "verses": 4
         },
         {
             "position": "RECESSIONAL",
             "friendlyName": "Concluding Hymn",
-            "hymnBook": "LAU",
-            "hymnNum": 4,
+            "hymnBook": "LHOAN",
+            "hymnNum": 259,
             "verses": 4
         }
     ]
