@@ -11,10 +11,29 @@
     "c-ordinary-23": {
         "entranceAntiphon": "You are just, O Lord, and your judgement is right; treat your servant in accord with your merciful love.",
         "firstReading": "Wisdom 9:13-18b",
-        "responsorialPsalm": "Ps 90(89):3-4. 5-6. 12-13. 14, 17.",
+        "responsorialPsalm": "Lord, you have been our refuge, from generation to generation.",
         "secondReading": "Philemon 9b-10, 12-17",
         "gospelAcclamation": "Alleluia, alleluia. Let your face shine forth on your servant, and teach me your decrees. Alleluia.",
         "gospel": "Luke 14:25-33",
         "communionAntiphon": "Like the deer that yearns for running streams, so my soul is yearning for you, my God; my soul is thirsting for God, the living God."
+    },
+    "the-exaltation-of-the-holy-cross": {
+        "entranceAntiphon": "We should glory in the Cross of our Lord Jesus Christ, in whom is our salvation, life and resurrection, through whom we are saved and delivered.",
+        "firstReading": "Numbers 21:4b-9",
+        "responsorialPsalm": "Never forget the deeds of the Lord!",
+        "secondReading": "Philippians 2:6-11",
+        "gospelAcclamation": "Alleluia, alleluia. We adore you, O Christ, and we bless you, because by your Cross you have redeemed the world. Alleluia.",
+        "gospel": "John 3:13-17",
+        "communionAntiphon": "When I am lifted up from the earth, I will draw everyone to myself, says the Lord."
+    },
+    "c-ordinary-25": {
+        "entranceAntiphon": "I am the salvation of the people, says the Lord.  Should they cry to me in any distress, I will hear them, and I will be their Lord for ever.",
+        "firstReading": "Amos 8:4-7",
+        "responsorialPsalm": "Praise the LORD, who raises the poor.",
+        "secondReading": "1 Timothy 2:1-8",
+        "gospelAcclamation": "Alleluia, alleluia. Jesus Christ, though he was rich, yet for your sake he became poor, so that you by his poverty might become rich. Alleluia.",
+        "gospel": "Luke 16:1-13",
+        "communionAntiphon": "You have laid down your precepts to be carefully kept; may my ways be firm in keeping your statutes."
+
     }
 }

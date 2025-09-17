@@ -1,0 +1,41 @@
+{
+    "date": "2025-09-21",
+    "euchPrayerOption": 2,
+    "hymns": [
+        {
+            "position": "PROCESSIONAL",
+            "friendlyName": "Opening Hymn",
+            "hymnBook": "LHOAN",
+            "hymnNum": 604,
+            "verses": 3
+        },
+        {
+            "position": "OFFERTORY",
+            "friendlyName": "Presentation of gifts",
+            "hymnBook": "LHOAN",
+            "hymnNum": 362,
+            "verses": 2
+        },
+        {
+            "position": "COMMUNION",
+            "friendlyName": "Communion Hymn I",
+            "hymnBook": "LAU",
+            "hymnNum": 423,
+            "verses": 3
+        },
+        {
+            "position": "COMMUNION",
+            "friendlyName": "Communion Hymn II",
+            "hymnBook": "LHOAN",
+            "hymnNum": 658,
+            "verses": 4
+        },
+        {
+            "position": "RECESSIONAL",
+            "friendlyName": "Concluding Hymn",
+            "hymnBook": "LHOAN",
+            "hymnNum": 828,
+            "verses": 5
+        }
+    ]
+}
