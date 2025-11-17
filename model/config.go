@@ -108,16 +108,19 @@ type HymnBook int
 const (
 	LAU HymnBook = iota + 1
 	LHOAN
+	MISC
 )
 
 var hymnToString = map[HymnBook]string{
 	LAU:   "LAU",
 	LHOAN: "LHOAN",
+	MISC:  "MISC",
 }
 
 var hymnToID = map[string]HymnBook{
 	"LAU":   LAU,
 	"LHOAN": LHOAN,
+	"MISC":  MISC,
 }
 
 func (h HymnBook) String() string {
