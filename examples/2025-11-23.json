@@ -1,0 +1,41 @@
+{
+    "date": "2025-11-23",
+    "euchPrayerOption": 2,
+    "hymns": [
+        {
+            "position": "PROCESSIONAL",
+            "friendlyName": "Opening Hymn",
+            "hymnBook": "MISC",
+            "hymnNum": 2,
+            "verses": 2
+        },
+        {
+            "position": "OFFERTORY",
+            "friendlyName": "Presentation of gifts",
+            "hymnBook": "LAU",
+            "hymnNum": 78,
+            "verses": 5
+        },
+        {
+            "position": "COMMUNION",
+            "friendlyName": "Communion Hymn I",
+            "hymnBook": "LAU",
+            "hymnNum": 776,
+            "verses": 4
+        },
+        {
+            "position": "COMMUNION",
+            "friendlyName": "Communion Hymn II",
+            "hymnBook": "LAU",
+            "hymnNum": 779,
+            "verses": 5
+        },
+        {
+            "position": "RECESSIONAL",
+            "friendlyName": "Concluding Hymn",
+            "hymnBook": "LAU",
+            "hymnNum": 713,
+            "verses": 5
+        }
+    ]
+}
